@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <rect width="1400" height="860" fill="#f5f5f5"/>
+
+  <!-- TOP NAV -->
+  <rect x="0" y="0" width="1400" height="52" fill="#2c2c2c"/>
+  <rect x="14" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="16" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="14" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <rect x="23" y="25" width="6" height="6" fill="#fff" opacity="0.8" rx="1"/>
+  <text x="42" y="32" font-size="16" fill="#fff" font-weight="600" font-family="Arial,sans-serif">Market Tracker</text>
+  <text x="210" y="33" font-size="14" fill="#fff" opacity="0.55" font-family="Arial,sans-serif">Dashboard</text>
+  <text x="295" y="33" font-size="14" fill="#fff" opacity="0.95" font-family="Arial,sans-serif">Price History</text>
+  <circle cx="1368" cy="26" r="16" fill="#0f3460"/>
+  <text x="1368" y="31" font-size="12" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">A</text>
+
+  <!-- BREADCRUMB -->
+  <rect x="0" y="52" width="1400" height="44" fill="#fff"/>
+  <rect x="0" y="95" width="1400" height="1" fill="#dee2e6"/>
+  <text x="24" y="80" font-size="15" fill="#212529" font-weight="600" font-family="Arial,sans-serif">Price History — BTC</text>
+
+  <!-- VIEW TOGGLE -->
+  <rect x="24" y="110" width="32" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="40" y="129" font-size="13" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">☰</text>
+  <rect x="60" y="110" width="32" height="28" rx="4" fill="#0f3460"/>
+  <text x="76" y="129" font-size="14" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif">📈</text>
+  <rect x="108" y="110" width="80" height="28" rx="4" fill="none" stroke="#dee2e6"/>
+  <text x="148" y="129" font-size="13" fill="#495057" text-anchor="middle" font-family="Arial,sans-serif">Filters ▾</text>
+
+  <!-- Filter active: BTC -->
+  <rect x="196" y="110" width="90" height="28" rx="14" fill="#cff4fc" stroke="#0dcaf0"/>
+  <text x="241" y="129" font-size="12" fill="#055160" text-anchor="middle" font-family="Arial,sans-serif">BTC ✕</text>
+
+  <!-- CHART CARD -->
+  <rect x="16" y="152" width="1368" height="520" rx="6" fill="#fff" stroke="#dee2e6"/>
+
+  <!-- Chart title -->
+  <text x="700" y="188" font-size="16" fill="#212529" font-weight="600" text-anchor="middle" font-family="Arial,sans-serif">Bitcoin (BTC) — Price Over Time (USD)</text>
+
+  <!-- Y-AXIS LABELS -->
+  <text x="80" y="224" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$85,000</text>
+  <line x1="94" y1="220" x2="1350" y2="220" stroke="#f5f5f5" stroke-width="1"/>
+  <text x="80" y="288" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$82,000</text>
+  <line x1="94" y1="284" x2="1350" y2="284" stroke="#f5f5f5" stroke-width="1"/>
+  <text x="80" y="352" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$79,000</text>
+  <line x1="94" y1="348" x2="1350" y2="348" stroke="#f5f5f5" stroke-width="1"/>
+  <text x="80" y="416" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$76,000</text>
+  <line x1="94" y1="412" x2="1350" y2="412" stroke="#f5f5f5" stroke-width="1"/>
+  <text x="80" y="480" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$73,000</text>
+  <line x1="94" y1="476" x2="1350" y2="476" stroke="#f5f5f5" stroke-width="1"/>
+  <text x="80" y="540" font-size="11" fill="#6c757d" text-anchor="end" font-family="Arial,sans-serif">$70,000</text>
+  <line x1="94" y1="536" x2="1350" y2="536" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- X-AXIS LABELS -->
+  <text x="150"  y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">00:00</text>
+  <text x="338"  y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">04:00</text>
+  <text x="526"  y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">08:00</text>
+  <text x="714"  y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">12:00</text>
+  <text x="902"  y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">16:00</text>
+  <text x="1090" y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">20:00</text>
+  <text x="1278" y="562" font-size="11" fill="#6c757d" text-anchor="middle" font-family="Arial,sans-serif">24:00</text>
+
+  <!-- LINE CHART — BTC price curve -->
+  <!-- Gradient fill under line -->
+  <defs>
+    <linearGradient id="btcGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#f7931a" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f7931a" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fill polygon under curve -->
+  <polygon points="
+    150,490  188,480  226,462  264,448  302,440  340,455  378,470
+    416,450  454,435  492,425  530,410  568,400  606,415  644,405
+    682,392  720,378  758,365  796,350  834,342  872,330  910,320
+    948,310  986,305  1024,295 1062,285 1100,275 1138,268 1176,258
+    1214,248 1252,240 1290,233 1328,226
+    1328,536 150,536"
+    fill="url(#btcGrad)"/>
+
+  <!-- Main line -->
+  <polyline points="
+    150,490  188,480  226,462  264,448  302,440  340,455  378,470
+    416,450  454,435  492,425  530,410  568,400  606,415  644,405
+    682,392  720,378  758,365  796,350  834,342  872,330  910,320
+    948,310  986,305  1024,295 1062,285 1100,275 1138,268 1176,258
+    1214,248 1252,240 1290,233 1328,226"
+    fill="none" stroke="#f7931a" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Current price dot -->
+  <circle cx="1328" cy="226" r="6" fill="#f7931a" stroke="#fff" stroke-width="2"/>
+
+  <!-- Tooltip at current point -->
+  <rect x="1230" y="196" width="110" height="36" rx="4" fill="#212529"/>
+  <text x="1285" y="211" font-size="10" fill="#adb5bd" text-anchor="middle" font-family="Arial,sans-serif">08:02 UTC</text>
+  <text x="1285" y="226" font-size="12" fill="#fff" text-anchor="middle" font-weight="600" font-family="Arial,sans-serif">$81,333</text>
+  <line x1="1285" y1="232" x2="1328" y2="226" stroke="#212529" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- LEGEND -->
+  <circle cx="116" cy="590" r="6" fill="#f7931a"/>
+  <text x="128" y="595" font-size="12" fill="#212529" font-family="Arial,sans-serif">BTC — Bitcoin (USD)</text>
+
+  <!-- KPI STRIP below chart -->
+  <rect x="16" y="688" width="320" height="70" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="36" y="712" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">Current Price</text>
+  <text x="36" y="742" font-size="24" fill="#212529" font-weight="700" font-family="Arial,sans-serif">$81,333</text>
+
+  <rect x="352" y="688" width="320" height="70" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="372" y="712" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">24h Change</text>
+  <text x="372" y="742" font-size="24" fill="#28a745" font-weight="700" font-family="Arial,sans-serif">▲ +0.59%</text>
+
+  <rect x="688" y="688" width="320" height="70" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="708" y="712" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">24h High</text>
+  <text x="708" y="742" font-size="24" fill="#212529" font-weight="700" font-family="Arial,sans-serif">$63,100</text>
+
+  <rect x="1024" y="688" width="320" height="70" rx="6" fill="#fff" stroke="#dee2e6"/>
+  <text x="1044" y="712" font-size="12" fill="#6c757d" font-family="Arial,sans-serif">24h Low</text>
+  <text x="1044" y="742" font-size="24" fill="#212529" font-weight="700" font-family="Arial,sans-serif">$60,200</text>
+
+  <!-- LABEL -->
+  <rect x="0" y="830" width="330" height="30" fill="#0f3460" opacity="0.9"/>
+  <text x="12" y="851" font-size="14" fill="#fff" font-weight="600" font-family="Arial,sans-serif">📈 Price History — Line Graph View</text>
+</svg>

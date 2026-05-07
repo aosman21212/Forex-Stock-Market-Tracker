@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ═══ History — List ═══ -->
+    <record id="view_market_rate_history_list" model="ir.ui.view">
+        <field name="name">market.rate.history.list</field>
+        <field name="model">market.rate.history</field>
+        <field name="arch" type="xml">
+            <list string="Price History" create="false" delete="false">
+                <field name="symbol_id"/>
+                <field name="symbol_type" widget="badge"
+                       decoration-info="symbol_type == 'forex'"
+                       decoration-primary="symbol_type == 'stock'"
+                       decoration-warning="symbol_type == 'crypto'"/>
+                <field name="date"/>
+                <field name="price" digits="[16,6]"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ═══ History — Graph (line chart) ═══ -->
+    <record id="view_market_rate_history_graph" model="ir.ui.view">
+        <field name="name">market.rate.history.graph</field>
+        <field name="model">market.rate.history</field>
+        <field name="arch" type="xml">
+            <graph string="Price History" type="line">
+                <field name="date"  type="row"/>
+                <field name="price" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- ═══ History — Action ═══ -->
+    <record id="action_market_rate_history" model="ir.actions.act_window">
+        <field name="name">Price History</field>
+        <field name="res_model">market.rate.history</field>
+        <field name="view_mode">list,graph</field>
+    </record>
+
+</odoo>

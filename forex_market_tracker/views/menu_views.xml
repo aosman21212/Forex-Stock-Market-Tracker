@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ═══ Root App ═══ -->
+    <menuitem id="menu_forex_market_tracker_root"
+              name="Market Tracker"
+              sequence="55"
+              web_icon="forex_market_tracker,static/description/icon.png"/>
+
+    <!-- ═══ Dashboard ═══ -->
+    <menuitem id="menu_market_dashboard"
+              name="Dashboard"
+              parent="menu_forex_market_tracker_root"
+              action="action_market_symbol"
+              sequence="10"/>
+
+    <!-- ═══ Price History ═══ -->
+    <menuitem id="menu_market_history"
+              name="Price History"
+              parent="menu_forex_market_tracker_root"
+              action="action_market_rate_history"
+              sequence="20"/>
+
+    <!-- ═══ Configuration ═══ -->
+    <menuitem id="menu_market_config"
+              name="Configuration"
+              parent="menu_forex_market_tracker_root"
+              sequence="90"/>
+
+    <menuitem id="menu_market_symbols_config"
+              name="Symbols"
+              parent="menu_market_config"
+              action="action_market_symbol"
+              sequence="10"/>
+
+</odoo>

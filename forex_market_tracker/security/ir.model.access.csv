@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_market_symbol_user,market.symbol user,model_market_symbol,base.group_user,1,1,1,1
+access_market_symbol_system,market.symbol system,model_market_symbol,base.group_system,1,1,1,1
+access_market_rate_history_user,market.rate.history user,model_market_rate_history,base.group_user,1,0,0,0
+access_market_rate_history_system,market.rate.history system,model_market_rate_history,base.group_system,1,1,1,1

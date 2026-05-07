@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/></head>
+<body>
+
+<!-- ===== BANNER ===== -->
+<section style="margin-bottom: 32px;">
+    <img src="banner.svg" style="width:100%; border-radius:8px;" alt="Market Tracker Banner"/>
+</section>
+
+<!-- ===== HEADER with ICON ===== -->
+<section style="background: linear-gradient(135deg, #0f3460 0%, #16213e 60%, #1a1a2e 100%);
+                padding: 40px 40px; text-align: center; border-radius: 8px; margin-bottom: 32px;">
+    <img src="icon.png" style="width:96px; height:96px; border-radius:50%;
+         border:3px solid #f7931a; margin-bottom:16px; display:block; margin-left:auto; margin-right:auto;"
+         alt="Market Tracker Icon"/>
+    <h1 style="color: #f7931a; font-size: 44px; margin: 0 0 12px; font-family: sans-serif; font-weight: 800;">
+        Forex &amp; Stock Market Tracker
+    </h1>
+    <p style="color: #a8b2c8; font-size: 18px; margin: 0 0 24px; font-family: sans-serif;">
+        Live Forex · Stocks · Crypto — powered by 100% free public APIs
+    </p>
+    <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <span style="background:#f7931a22; border:1px solid #f7931a; color:#f7931a;
+                     padding:6px 18px; border-radius:20px; font-family:sans-serif; font-size:14px;">
+            🟠 Crypto via CoinGecko
+        </span>
+        <span style="background:#0dcaf022; border:1px solid #0dcaf0; color:#0dcaf0;
+                     padding:6px 18px; border-radius:20px; font-family:sans-serif; font-size:14px;">
+            💱 Forex via Frankfurter (ECB)
+        </span>
+        <span style="background:#6ea8fe22; border:1px solid #6ea8fe; color:#6ea8fe;
+                     padding:6px 18px; border-radius:20px; font-family:sans-serif; font-size:14px;">
+            📊 Stocks via Yahoo Finance
+        </span>
+    </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section style="max-width: 900px; margin: 0 auto 40px; font-family: sans-serif;">
+    <p style="font-size: 16px; color: #444; line-height: 1.8;">
+        <strong>Forex &amp; Stock Market Tracker</strong> brings live financial market data directly into your
+        Odoo backend — no API subscriptions, no credit card, no limits for standard usage.
+        It connects to three fully free public APIs and refreshes prices automatically every 30 minutes.
+    </p>
+</section>
+
+<!-- ===== KEY FEATURES ===== -->
+<section style="max-width: 900px; margin: 0 auto 48px; font-family: sans-serif;">
+    <h2 style="color: #0f3460; font-size: 26px; border-bottom: 3px solid #f7931a;
+               padding-bottom: 8px; margin-bottom: 28px;">✨ Key Features</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+
+        <div style="background:#f8f9ff; border-left:4px solid #f7931a; border-radius:6px; padding:20px;">
+            <h3 style="color:#0f3460; margin:0 0 8px;">💱 Forex Rates</h3>
+            <p style="color:#555; margin:0; font-size:14px; line-height:1.6;">
+                EUR/USD · GBP/USD · USD/JPY · USD/CHF and any ECB-supported pair.
+                Powered by the <strong>Frankfurter API</strong> — official ECB data, zero cost.
+            </p>
+        </div>
+
+        <div style="background:#f8f9ff; border-left:4px solid #6ea8fe; border-radius:6px; padding:20px;">
+            <h3 style="color:#0f3460; margin:0 0 8px;">📊 Stock Prices</h3>
+            <p style="color:#555; margin:0; font-size:14px; line-height:1.6;">
+                AAPL · TSLA · MSFT · NVDA and any NYSE/NASDAQ ticker.
+                Powered by <strong>Yahoo Finance</strong> — real-time quotes, no key needed.
+            </p>
+        </div>
+
+        <div style="background:#f8f9ff; border-left:4px solid #f7931a; border-radius:6px; padding:20px;">
+            <h3 style="color:#0f3460; margin:0 0 8px;">🟠 Crypto Prices</h3>
+            <p style="color:#555; margin:0; font-size:14px; line-height:1.6;">
+                BTC · ETH · SOL · BNB · DOGE and 10+ more.
+                Powered by <strong>CoinGecko</strong> — free tier supports all standard coins.
+            </p>
+        </div>
+
+        <div style="background:#f8f9ff; border-left:4px solid #28a745; border-radius:6px; padding:20px;">
+            <h3 style="color:#0f3460; margin:0 0 8px;">🔄 Auto-Refresh</h3>
+            <p style="color:#555; margin:0; font-size:14px; line-height:1.6;">
+                Built-in cron job refreshes all symbols every <strong>30 minutes</strong> automatically.
+                Or use the manual "Refresh All" button anytime.
+            </p>
+        </div>
+
+        <div style="background:#f8f9ff; border-left:4px solid #6ea8fe; border-radius:6px; padding:20px;">
+            <h3 style="color:#0f3460; margin:0 0 8px;">📋 Kanban Dashboard</h3>
+            <p style="color:#555; margin:0; font-size:14px; line-height:1.6;">
+                Live price cards with <span style="color:#28a745; font-weight:600;">▲ green</span> /
+                <span style="color:#dc3545; font-weight:600;">▼ red</span> direction indicators,
+                high/low, and last-updated timestamp.
+            </p>
+        </div>
+
+        <div style="background:#f8f9ff; border-left:4px solid #28a745; border-radius:6px; padding:20px;">
+            <h3 style="color:#0f3460; margin:0 0 8px;">📈 Price History</h3>
+            <p style="color:#555; margin:0; font-size:14px; line-height:1.6;">
+                Every refresh snapshot is stored. View as a list or
+                <strong>line graph</strong> chart to track price movement over time.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== SCREENSHOTS ===== -->
+<section style="max-width: 900px; margin: 0 auto 48px; font-family: sans-serif;">
+    <h2 style="color: #0f3460; font-size: 26px; border-bottom: 3px solid #f7931a;
+               padding-bottom: 8px; margin-bottom: 28px;">📸 Screenshots</h2>
+
+    <div style="margin-bottom: 28px;">
+        <p style="color:#f7931a; font-weight:700; margin:0 0 10px; font-size:15px;">
+            📊 Kanban Dashboard — Live Price Cards
+        </p>
+        <img src="screenshots/01_dashboard.svg"
+             style="width:100%; border-radius:8px; border:1px solid #dee2e6;
+                    box-shadow:0 4px 16px rgba(0,0,0,0.1);"
+             alt="Kanban Dashboard"/>
+        <p style="color:#6c757d; font-size:13px; margin:6px 0 0;">
+            All tracked symbols at a glance — colour-coded by price direction, grouped by type.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 28px;">
+        <p style="color:#f7931a; font-weight:700; margin:0 0 10px; font-size:15px;">
+            ☰ Symbols — List View with per-row Refresh
+        </p>
+        <img src="screenshots/02_list_view.svg"
+             style="width:100%; border-radius:8px; border:1px solid #dee2e6;
+                    box-shadow:0 4px 16px rgba(0,0,0,0.1);"
+             alt="List View"/>
+        <p style="color:#6c757d; font-size:13px; margin:6px 0 0;">
+            Full sortable list with price, change %, high/low, last update, and a per-row refresh button.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 28px;">
+        <p style="color:#f7931a; font-weight:700; margin:0 0 10px; font-size:15px;">
+            📈 Price History — Line Graph
+        </p>
+        <img src="screenshots/03_price_history.svg"
+             style="width:100%; border-radius:8px; border:1px solid #dee2e6;
+                    box-shadow:0 4px 16px rgba(0,0,0,0.1);"
+             alt="Price History Graph"/>
+        <p style="color:#6c757d; font-size:13px; margin:6px 0 0;">
+            Every price snapshot stored and visualised as a line chart per symbol.
+        </p>
+    </div>
+</section>
+
+<!-- ===== FREE APIS ===== -->
+<section style="max-width: 900px; margin: 0 auto 48px; font-family: sans-serif;">
+    <h2 style="color: #0f3460; font-size: 26px; border-bottom: 3px solid #f7931a;
+               padding-bottom: 8px; margin-bottom: 20px;">🆓 Free APIs Used</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead>
+            <tr style="background:#0f3460; color:#fff;">
+                <th style="padding:12px 16px; text-align:left;">API</th>
+                <th style="padding:12px 16px; text-align:left;">Covers</th>
+                <th style="padding:12px 16px; text-align:left;">Key Required?</th>
+                <th style="padding:12px 16px; text-align:left;">Rate Limit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background:#f8f9ff;">
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">
+                    <strong>Frankfurter</strong><br/>
+                    <small style="color:#6c757d;">api.frankfurter.app</small>
+                </td>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">Forex (ECB rates)</td>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">
+                    <span style="color:#28a745; font-weight:600;">✅ No key needed</span>
+                </td>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">Unlimited</td>
+            </tr>
+            <tr>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">
+                    <strong>Yahoo Finance</strong><br/>
+                    <small style="color:#6c757d;">query1.finance.yahoo.com</small>
+                </td>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">Stocks (NYSE/NASDAQ)</td>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">
+                    <span style="color:#28a745; font-weight:600;">✅ No key needed</span>
+                </td>
+                <td style="padding:10px 16px; border-bottom:1px solid #e0e4f0;">Generous free tier</td>
+            </tr>
+            <tr style="background:#f8f9ff;">
+                <td style="padding:10px 16px;">
+                    <strong>CoinGecko</strong><br/>
+                    <small style="color:#6c757d;">api.coingecko.com</small>
+                </td>
+                <td style="padding:10px 16px;">Crypto (500+ coins)</td>
+                <td style="padding:10px 16px;">
+                    <span style="color:#28a745; font-weight:600;">✅ No key needed</span>
+                </td>
+                <td style="padding:10px 16px;">30 calls/min free</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="color:#6c757d; font-size:13px; margin:12px 0 0;">
+        💡 Optionally add a free <strong>Alpha Vantage</strong> key in Settings for higher-quality
+        intraday stock data (free signup at alphavantage.co).
+    </p>
+</section>
+
+<!-- ===== TECHNICAL ===== -->
+<section style="max-width: 900px; margin: 0 auto 48px; font-family: sans-serif;">
+    <h2 style="color: #0f3460; font-size: 26px; border-bottom: 3px solid #f7931a;
+               padding-bottom: 8px; margin-bottom: 20px;">⚙️ Technical Info</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="background:#f8f9ff;">
+            <td style="padding:10px 16px; font-weight:bold; color:#0f3460; width:200px;">Odoo Version</td>
+            <td style="padding:10px 16px; color:#555;">19.0</td>
+        </tr>
+        <tr>
+            <td style="padding:10px 16px; font-weight:bold; color:#0f3460;">Dependencies</td>
+            <td style="padding:10px 16px; color:#555;">base, base_setup</td>
+        </tr>
+        <tr style="background:#f8f9ff;">
+            <td style="padding:10px 16px; font-weight:bold; color:#0f3460;">Models</td>
+            <td style="padding:10px 16px; color:#555;">market.symbol · market.rate.history</td>
+        </tr>
+        <tr>
+            <td style="padding:10px 16px; font-weight:bold; color:#0f3460;">License</td>
+            <td style="padding:10px 16px; color:#555;">LGPL-3</td>
+        </tr>
+        <tr style="background:#f8f9ff;">
+            <td style="padding:10px 16px; font-weight:bold; color:#0f3460;">Support</td>
+            <td style="padding:10px 16px; color:#555;">abdzoro89@gmail.com</td>
+        </tr>
+    </table>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<section style="background:#0f3460; border-radius:8px; padding:30px; text-align:center;
+                max-width:900px; margin:0 auto; font-family:sans-serif;">
+    <p style="color:#a8b2c8; margin:0; font-size:15px;">
+        Questions or issues? Contact
+        <a href="mailto:abdzoro89@gmail.com" style="color:#f7931a;">abdzoro89@gmail.com</a>
+    </p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ═══ Forex ═══ -->
+    <record id="sym_eur_usd" model="market.symbol">
+        <field name="name">Euro / US Dollar</field>
+        <field name="symbol">EUR/USD</field>
+        <field name="symbol_type">forex</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">1.0823</field>
+        <field name="price_previous">1.0801</field>
+        <field name="change_pct">0.20</field>
+        <field name="price_high">1.0845</field>
+        <field name="price_low">1.0798</field>
+    </record>
+
+    <record id="sym_gbp_usd" model="market.symbol">
+        <field name="name">British Pound / US Dollar</field>
+        <field name="symbol">GBP/USD</field>
+        <field name="symbol_type">forex</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">1.2711</field>
+        <field name="price_previous">1.2725</field>
+        <field name="change_pct">-0.11</field>
+        <field name="price_high">1.2740</field>
+        <field name="price_low">1.2695</field>
+    </record>
+
+    <record id="sym_usd_jpy" model="market.symbol">
+        <field name="name">US Dollar / Japanese Yen</field>
+        <field name="symbol">USD/JPY</field>
+        <field name="symbol_type">forex</field>
+        <field name="currency_quote">JPY</field>
+        <field name="price">157.43</field>
+        <field name="price_previous">156.88</field>
+        <field name="change_pct">0.35</field>
+    </record>
+
+    <record id="sym_usd_chf" model="market.symbol">
+        <field name="name">US Dollar / Swiss Franc</field>
+        <field name="symbol">USD/CHF</field>
+        <field name="symbol_type">forex</field>
+        <field name="currency_quote">CHF</field>
+        <field name="price">0.9041</field>
+        <field name="change_pct">-0.08</field>
+    </record>
+
+    <!-- ═══ Stocks ═══ -->
+    <record id="sym_aapl" model="market.symbol">
+        <field name="name">Apple Inc.</field>
+        <field name="symbol">AAPL</field>
+        <field name="symbol_type">stock</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">213.49</field>
+        <field name="price_previous">210.52</field>
+        <field name="change_pct">1.41</field>
+        <field name="price_high">214.20</field>
+        <field name="price_low">211.80</field>
+    </record>
+
+    <record id="sym_tsla" model="market.symbol">
+        <field name="name">Tesla, Inc.</field>
+        <field name="symbol">TSLA</field>
+        <field name="symbol_type">stock</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">177.28</field>
+        <field name="price_previous">181.18</field>
+        <field name="change_pct">-2.15</field>
+        <field name="price_high">181.50</field>
+        <field name="price_low">176.10</field>
+    </record>
+
+    <record id="sym_msft" model="market.symbol">
+        <field name="name">Microsoft Corporation</field>
+        <field name="symbol">MSFT</field>
+        <field name="symbol_type">stock</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">415.32</field>
+        <field name="price_previous">412.10</field>
+        <field name="change_pct">0.78</field>
+    </record>
+
+    <record id="sym_nvda" model="market.symbol">
+        <field name="name">NVIDIA Corporation</field>
+        <field name="symbol">NVDA</field>
+        <field name="symbol_type">stock</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">875.40</field>
+        <field name="price_previous">862.00</field>
+        <field name="change_pct">1.55</field>
+    </record>
+
+    <!-- ═══ Crypto ═══ -->
+    <record id="sym_btc" model="market.symbol">
+        <field name="name">Bitcoin</field>
+        <field name="symbol">BTC</field>
+        <field name="symbol_type">crypto</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">62450.00</field>
+        <field name="price_previous">60500.00</field>
+        <field name="change_pct">3.22</field>
+        <field name="price_high">63100.00</field>
+        <field name="price_low">60200.00</field>
+    </record>
+
+    <record id="sym_eth" model="market.symbol">
+        <field name="name">Ethereum</field>
+        <field name="symbol">ETH</field>
+        <field name="symbol_type">crypto</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">3180.00</field>
+        <field name="price_previous">3213.00</field>
+        <field name="change_pct">-1.03</field>
+    </record>
+
+    <record id="sym_sol" model="market.symbol">
+        <field name="name">Solana</field>
+        <field name="symbol">SOL</field>
+        <field name="symbol_type">crypto</field>
+        <field name="currency_quote">USD</field>
+        <field name="price">148.72</field>
+        <field name="price_previous">144.10</field>
+        <field name="change_pct">3.21</field>
+    </record>
+
+</odoo>

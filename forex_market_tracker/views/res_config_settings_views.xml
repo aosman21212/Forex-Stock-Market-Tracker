@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_forex" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.forex.market.tracker</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Market Tracker"
+                     name="forex_market_tracker"
+                     data-string="Market Tracker"
+                     logo="/forex_market_tracker/static/description/icon.png">
+                    <block title="API Keys" name="market_tracker_api_keys">
+                        <setting id="forex_alpha_vantage_api_key"
+                                 string="Alpha Vantage API Key"
+                                 help="Optional. Free signup at https://www.alphavantage.co — provides higher-quality intraday stock data.">
+                            <field name="forex_alpha_vantage_api_key"
+                                   placeholder="Leave empty to use the free Yahoo Finance feed…"
+                                   class="o_input"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

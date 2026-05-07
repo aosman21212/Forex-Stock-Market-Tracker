@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Kanban — Live Price Dashboard                                      -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="view_market_symbol_kanban" model="ir.ui.view">
+        <field name="name">market.symbol.kanban</field>
+        <field name="model">market.symbol</field>
+        <field name="arch" type="xml">
+            <kanban default_order="symbol_type,symbol">
+                <field name="symbol"/>
+                <field name="name"/>
+                <field name="symbol_type"/>
+                <field name="price"/>
+                <field name="change_pct"/>
+                <field name="price_high"/>
+                <field name="price_low"/>
+                <field name="last_update"/>
+                <field name="price_direction"/>
+                <field name="currency_quote"/>
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="o_kanban_record p-3"
+                             style="min-width:200px;">
+                            <!-- Header: symbol + type badge -->
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <strong class="fs-5 text-truncate" style="max-width:130px;">
+                                    <field name="symbol"/>
+                                </strong>
+                                <span t-attf-class="badge rounded-pill ms-1
+                                    #{record.symbol_type.raw_value === 'forex'  ? 'text-bg-info'    :
+                                      record.symbol_type.raw_value === 'stock'  ? 'text-bg-primary' :
+                                      'text-bg-warning'}">
+                                    <field name="symbol_type"/>
+                                </span>
+                            </div>
+
+                            <!-- Full name -->
+                            <div class="text-muted small mb-2">
+                                <field name="name"/>
+                            </div>
+
+                            <!-- Price -->
+                            <div t-attf-class="fs-3 fw-bold lh-1 mb-1
+                                #{record.price_direction.raw_value === 'up'   ? 'text-success' :
+                                  record.price_direction.raw_value === 'down' ? 'text-danger'  : ''}">
+                                <field name="price" widget="float" digits="[16,4]"/>
+                                <small class="fs-6 fw-normal text-muted ms-1">
+                                    <field name="currency_quote"/>
+                                </small>
+                            </div>
+
+                            <!-- Change % -->
+                            <div t-attf-class="fw-semibold small mb-2
+                                #{record.change_pct.raw_value > 0   ? 'text-success' :
+                                  record.change_pct.raw_value &lt; 0 ? 'text-danger'  : 'text-muted'}">
+                                <t t-if="record.change_pct.raw_value > 0">▲ </t>
+                                <t t-elif="record.change_pct.raw_value &lt; 0">▼ </t>
+                                <t t-else="">— </t>
+                                <field name="change_pct" digits="[6,2]"/>%
+                            </div>
+
+                            <!-- High / Low -->
+                            <div class="d-flex justify-content-between small text-muted border-top pt-1 mb-1">
+                                <span>H: <field name="price_high" digits="[16,4]"/></span>
+                                <span>L: <field name="price_low"  digits="[16,4]"/></span>
+                            </div>
+
+                            <!-- Last updated -->
+                            <div class="text-muted" style="font-size:0.72rem;">
+                                Updated: <field name="last_update" widget="datetime"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  List View                                                          -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="view_market_symbol_list" model="ir.ui.view">
+        <field name="name">market.symbol.list</field>
+        <field name="model">market.symbol</field>
+        <field name="arch" type="xml">
+            <list string="Market Symbols"
+                  decoration-success="change_pct > 0"
+                  decoration-danger="change_pct &lt; 0">
+                <field name="symbol" string="Ticker"/>
+                <field name="name"/>
+                <field name="symbol_type" widget="badge"
+                       decoration-info="symbol_type == 'forex'"
+                       decoration-primary="symbol_type == 'stock'"
+                       decoration-warning="symbol_type == 'crypto'"/>
+                <field name="price"          digits="[16,6]"/>
+                <field name="change_pct"     string="Change %" digits="[6,4]"/>
+                <field name="price_high"     optional="show" digits="[16,4]"/>
+                <field name="price_low"      optional="show" digits="[16,4]"/>
+                <field name="currency_quote" optional="show"/>
+                <field name="last_update"/>
+                <button name="action_refresh_prices"
+                        type="object"
+                        string=""
+                        icon="fa-refresh"
+                        title="Refresh price now"
+                        class="btn-sm btn-secondary"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Form View                                                          -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="view_market_symbol_form" model="ir.ui.view">
+        <field name="name">market.symbol.form</field>
+        <field name="model">market.symbol</field>
+        <field name="arch" type="xml">
+            <form string="Market Symbol">
+                <header>
+                    <button name="action_refresh_prices"
+                            string="🔄 Refresh Price"
+                            type="object"
+                            class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button"
+                                type="object"
+                                name="action_view_history"
+                                icon="fa-history">
+                            <field name="history_count" widget="statinfo" string="History"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="symbol" string="Symbol"/>
+                        <h1><field name="symbol" placeholder="e.g. EUR/USD, AAPL, BTC"/></h1>
+                    </div>
+                    <group>
+                        <group string="Identity">
+                            <field name="name" placeholder="e.g. Euro / US Dollar"/>
+                            <field name="symbol_type"/>
+                            <field name="currency_quote"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Live Price">
+                            <field name="price"          digits="[16,6]"/>
+                            <field name="price_previous" digits="[16,6]"/>
+                            <field name="change_pct"     digits="[6,4]"/>
+                            <field name="price_high"     digits="[16,6]"/>
+                            <field name="price_low"      digits="[16,6]"/>
+                            <field name="last_update"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Search View                                                        -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="view_market_symbol_search" model="ir.ui.view">
+        <field name="name">market.symbol.search</field>
+        <field name="model">market.symbol</field>
+        <field name="arch" type="xml">
+            <search string="Search Symbols">
+                <field name="symbol" string="Ticker / Symbol"/>
+                <field name="name"/>
+                <separator/>
+                <filter string="Forex"  name="forex"  domain="[('symbol_type','=','forex')]"/>
+                <filter string="Stocks" name="stocks" domain="[('symbol_type','=','stock')]"/>
+                <filter string="Crypto" name="crypto" domain="[('symbol_type','=','crypto')]"/>
+                <separator/>
+                <filter string="▲ Rising"  name="rising"  domain="[('change_pct','>',0)]"/>
+                <filter string="▼ Falling" name="falling" domain="[('change_pct','&lt;',0)]"/>
+                <separator/>
+                <filter string="Group by Type"   name="grp_type"   context="{'group_by':'symbol_type'}"/>
+                <filter string="Group by Symbol" name="grp_symbol" context="{'group_by':'symbol'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Graph View                                                         -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="view_market_symbol_graph" model="ir.ui.view">
+        <field name="name">market.symbol.graph</field>
+        <field name="model">market.symbol</field>
+        <field name="arch" type="xml">
+            <graph string="Market Overview" type="bar">
+                <field name="symbol"     type="row"/>
+                <field name="change_pct" type="measure" string="Change %"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Action                                                             -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="action_market_symbol" model="ir.actions.act_window">
+        <field name="name">Market Dashboard</field>
+        <field name="res_model">market.symbol</field>
+        <field name="view_mode">kanban,list,form,graph</field>
+        <field name="search_view_id" ref="view_market_symbol_search"/>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <!--  Server Action — Refresh All (Bulk toolbar)                        -->
+    <!-- ══════════════════════════════════════════════════════════════════ -->
+    <record id="action_server_refresh_all_prices" model="ir.actions.server">
+        <field name="name">Refresh All Prices</field>
+        <field name="model_id" ref="model_market_symbol"/>
+        <field name="binding_model_id" ref="model_market_symbol"/>
+        <field name="binding_view_types">list,kanban</field>
+        <field name="state">code</field>
+        <field name="code">
+if records:
+    records.action_refresh_prices()
+else:
+    env['market.symbol'].search([]).action_refresh_prices()
+        </field>
+    </record>
+
+</odoo>
