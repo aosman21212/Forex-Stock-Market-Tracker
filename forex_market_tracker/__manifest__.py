@@ -19,9 +19,10 @@ Features:
 - Price history log with graph view
 - Optional Alpha Vantage API key for premium stock data
     """,
-    'author': 'abdzoro89',
+  'author': 'Abdulkrim Osman (+966562984106, +966553368212)',
     'website': 'https://apps.odoo.com',
     'support': 'abdzoro89@gmail.com',
+    'maintainer': 'a.osman@bab.com.sa',
     'depends': ['base', 'base_setup'],
     'data': [
         'security/ir.model.access.csv',
